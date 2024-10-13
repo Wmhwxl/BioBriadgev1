@@ -50,10 +50,10 @@ def compute_metrics(inputs: EvalPrediction) -> Dict:
     predictions_list = inputs.predictions[0]
     #print("Type of predictions_list:", type(predictions_list))
     #print("First element in predictions_list:", predictions_list[0])
-    # 假设 predictions_list 是包含字典的列表
+    
     num_samples = len(predictions_list)
     
-    # 初始化一个新的字典来存储提取的信息
+    
     predictions_dict = {
         "node_index": [],
         "node_type": [],
@@ -61,7 +61,7 @@ def compute_metrics(inputs: EvalPrediction) -> Dict:
         "label": defaultdict(list)
     }
 
-    # 提取信息到字典中
+    
     for prediction in predictions_list:
         predictions_dict["node_index"].append(prediction["node_index"])
         predictions_dict["node_type"].append(prediction["node_type"])
